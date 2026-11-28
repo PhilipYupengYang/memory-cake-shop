@@ -1,0 +1,517 @@
+{
+ "input": {
+  "schema": 2,
+  "lang": "zh",
+  "recipient": "妈妈",
+  "age": 60,
+  "from": "女儿",
+  "title": "妈妈，生日快乐",
+  "subtitle": "这是一个示例礼物（照片是画的）",
+  "heartText": "妈妈，我爱你 ❤",
+  "letter": "妈妈：\n\n生日快乐。\n挑这些照片的时候，我才发现，\n几乎每一张里，你都在照顾别人。\n小时候是你扶着我的车座，\n后来是你来看我毕业，\n现在换我，陪你慢慢变老。\n今天只想对你说：辛苦了，我爱你。\n\n—— 女儿",
+  "chapters": [
+   {
+    "title": "小时候",
+    "items": [
+     {
+      "id": "demo00",
+      "cap": "你的第一个生日"
+     },
+     {
+      "id": "demo01",
+      "cap": "放风筝的春天"
+     },
+     {
+      "id": "demo02",
+      "cap": "第一辆自行车"
+     },
+     {
+      "id": "demo03",
+      "cap": "那年冬天雪很大"
+     },
+     {
+      "id": "demo04",
+      "cap": "第一次出远门"
+     },
+     {
+      "id": "demo05",
+      "cap": ""
+     },
+     {
+      "id": "demo06",
+      "cap": "毕业那天"
+     },
+     {
+      "id": "demo07",
+      "cap": "一把伞，两个人"
+     },
+     {
+      "id": "demo08",
+      "cap": ""
+     }
+    ]
+   },
+   {
+    "title": "后来，有了我",
+    "items": [
+     {
+      "id": "demo09",
+      "cap": "第一次看海"
+     },
+     {
+      "id": "demo10",
+      "cap": "全家福"
+     },
+     {
+      "id": "demo11",
+      "cap": "气球比我还高"
+     },
+     {
+      "id": "demo12",
+      "cap": "过年"
+     },
+     {
+      "id": "demo13",
+      "cap": "包饺子"
+     },
+     {
+      "id": "demo14",
+      "cap": "你教我放风筝"
+     },
+     {
+      "id": "demo15",
+      "cap": "新世纪的蛋糕"
+     },
+     {
+      "id": "demo16",
+      "cap": ""
+     },
+     {
+      "id": "demo17",
+      "cap": "一起爬山"
+     },
+     {
+      "id": "demo18",
+      "cap": "你扶着我的车座"
+     },
+     {
+      "id": "demo19",
+      "cap": "堆雪人"
+     },
+     {
+      "id": "demo20",
+      "cap": ""
+     }
+    ]
+   },
+   {
+    "title": "我们的家",
+    "items": [
+     {
+      "id": "demo21",
+      "cap": "你来看我毕业"
+     },
+     {
+      "id": "demo22",
+      "cap": ""
+     },
+     {
+      "id": "demo23",
+      "cap": "一壶茶"
+     },
+     {
+      "id": "demo24",
+      "cap": ""
+     },
+     {
+      "id": "demo25",
+      "cap": "团圆"
+     },
+     {
+      "id": "demo26",
+      "cap": "家里来了小橘"
+     },
+     {
+      "id": "demo27",
+      "cap": "你种的花"
+     },
+     {
+      "id": "demo28",
+      "cap": ""
+     },
+     {
+      "id": "demo29",
+      "cap": "春天去看花"
+     },
+     {
+      "id": "demo30",
+      "cap": "在家的那个春节"
+     }
+    ]
+   },
+   {
+    "title": "现在的你",
+    "items": [
+     {
+      "id": "demo31",
+      "cap": ""
+     },
+     {
+      "id": "demo32",
+      "cap": ""
+     },
+     {
+      "id": "demo33",
+      "cap": "陪你看日落"
+     },
+     {
+      "id": "demo34",
+      "cap": "牵着你的手"
+     },
+     {
+      "id": "demo35",
+      "cap": "一大家子"
+     },
+     {
+      "id": "demo36",
+      "cap": "小橘也老了"
+     },
+     {
+      "id": "demo37",
+      "cap": ""
+     },
+     {
+      "id": "demo38",
+      "cap": ""
+     },
+     {
+      "id": "demo39",
+      "cap": "今年的蛋糕"
+     }
+    ]
+   }
+  ]
+ },
+ "media": [
+  {
+   "id": "demo00",
+   "type": "image",
+   "src": "demo/media/demo00.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1966-01-01T10:00:00"
+  },
+  {
+   "id": "demo01",
+   "type": "image",
+   "src": "demo/media/demo01.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1972-06-08T10:00:00"
+  },
+  {
+   "id": "demo02",
+   "type": "image",
+   "src": "demo/media/demo02.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1975-11-15T10:00:00"
+  },
+  {
+   "id": "demo03",
+   "type": "image",
+   "src": "demo/media/demo03.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1978-04-22T10:00:00"
+  },
+  {
+   "id": "demo04",
+   "type": "image",
+   "src": "demo/media/demo04.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1982-09-02T10:00:00"
+  },
+  {
+   "id": "demo05",
+   "type": "image",
+   "src": "demo/media/demo05.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1985-02-09T10:00:00"
+  },
+  {
+   "id": "demo06",
+   "type": "image",
+   "src": "demo/media/demo06.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1987-07-16T10:00:00"
+  },
+  {
+   "id": "demo07",
+   "type": "image",
+   "src": "demo/media/demo07.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1989-12-23T10:00:00"
+  },
+  {
+   "id": "demo08",
+   "type": "image",
+   "src": "demo/media/demo08.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1990-05-03T10:00:00"
+  },
+  {
+   "id": "demo09",
+   "type": "image",
+   "src": "demo/media/demo09.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1991-10-10T10:00:00"
+  },
+  {
+   "id": "demo10",
+   "type": "image",
+   "src": "demo/media/demo10.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1993-03-17T10:00:00"
+  },
+  {
+   "id": "demo11",
+   "type": "image",
+   "src": "demo/media/demo11.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1994-08-24T10:00:00"
+  },
+  {
+   "id": "demo12",
+   "type": "image",
+   "src": "demo/media/demo12.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1996-01-04T10:00:00"
+  },
+  {
+   "id": "demo13",
+   "type": "image",
+   "src": "demo/media/demo13.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "1997-06-11T10:00:00"
+  },
+  {
+   "id": "demo14",
+   "type": "image",
+   "src": "demo/media/demo14.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "1999-11-18T10:00:00"
+  },
+  {
+   "id": "demo15",
+   "type": "image",
+   "src": "demo/media/demo15.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2000-04-25T10:00:00"
+  },
+  {
+   "id": "demo16",
+   "type": "image",
+   "src": "demo/media/demo16.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2002-09-05T10:00:00"
+  },
+  {
+   "id": "demo17",
+   "type": "image",
+   "src": "demo/media/demo17.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2004-02-12T10:00:00"
+  },
+  {
+   "id": "demo18",
+   "type": "image",
+   "src": "demo/media/demo18.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2005-07-19T10:00:00"
+  },
+  {
+   "id": "demo19",
+   "type": "image",
+   "src": "demo/media/demo19.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2007-12-26T10:00:00"
+  },
+  {
+   "id": "demo20",
+   "type": "image",
+   "src": "demo/media/demo20.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2008-05-06T10:00:00"
+  },
+  {
+   "id": "demo21",
+   "type": "image",
+   "src": "demo/media/demo21.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2010-10-13T10:00:00"
+  },
+  {
+   "id": "demo22",
+   "type": "image",
+   "src": "demo/media/demo22.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2011-03-20T10:00:00"
+  },
+  {
+   "id": "demo23",
+   "type": "image",
+   "src": "demo/media/demo23.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2013-08-27T10:00:00"
+  },
+  {
+   "id": "demo24",
+   "type": "image",
+   "src": "demo/media/demo24.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2014-01-07T10:00:00"
+  },
+  {
+   "id": "demo25",
+   "type": "image",
+   "src": "demo/media/demo25.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2015-06-14T10:00:00"
+  },
+  {
+   "id": "demo26",
+   "type": "image",
+   "src": "demo/media/demo26.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2016-11-21T10:00:00"
+  },
+  {
+   "id": "demo27",
+   "type": "image",
+   "src": "demo/media/demo27.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2017-04-01T10:00:00"
+  },
+  {
+   "id": "demo28",
+   "type": "image",
+   "src": "demo/media/demo28.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2018-09-08T10:00:00"
+  },
+  {
+   "id": "demo29",
+   "type": "image",
+   "src": "demo/media/demo29.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2019-02-15T10:00:00"
+  },
+  {
+   "id": "demo30",
+   "type": "image",
+   "src": "demo/media/demo30.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2020-07-22T10:00:00"
+  },
+  {
+   "id": "demo31",
+   "type": "image",
+   "src": "demo/media/demo31.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2021-12-02T10:00:00"
+  },
+  {
+   "id": "demo32",
+   "type": "image",
+   "src": "demo/media/demo32.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2022-05-09T10:00:00"
+  },
+  {
+   "id": "demo33",
+   "type": "image",
+   "src": "demo/media/demo33.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2023-10-16T10:00:00"
+  },
+  {
+   "id": "demo34",
+   "type": "image",
+   "src": "demo/media/demo34.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2023-03-23T10:00:00"
+  },
+  {
+   "id": "demo35",
+   "type": "image",
+   "src": "demo/media/demo35.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2024-08-03T10:00:00"
+  },
+  {
+   "id": "demo36",
+   "type": "image",
+   "src": "demo/media/demo36.jpg",
+   "w": 1200,
+   "h": 900,
+   "date": "2025-01-10T10:00:00"
+  },
+  {
+   "id": "demo37",
+   "type": "image",
+   "src": "demo/media/demo37.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2025-06-17T10:00:00"
+  },
+  {
+   "id": "demo38",
+   "type": "image",
+   "src": "demo/media/demo38.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2026-11-24T10:00:00"
+  },
+  {
+   "id": "demo39",
+   "type": "image",
+   "src": "demo/media/demo39.jpg",
+   "w": 900,
+   "h": 1200,
+   "date": "2026-04-04T10:00:00"
+  }
+ ]
+}

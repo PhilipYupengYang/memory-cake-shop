@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fbf4e8">
+<meta name="robots" content="noindex">
+<title>做一个回忆蛋糕</title>
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="shop.css">
+<script>window.SHOP = {"apiBase":"","buy":{"how":"做完先看效果，满意后点付款：在「爱发电」用微信或支付宝付 ¥9.99（第一次付款要用手机号验证一下），付完回到页面，礼物链接自动生成，不用等人工。","url":""},"price":"9.99","editDays":7};</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c2.4 3 2.6 5.2 0 7.4C13.4 8.2 13.6 6 16 3z" fill="#e8962e"/><rect x="14.6" y="10.5" width="2.8" height="7" rx="1" fill="#c9644f"/><path d="M5 18.5h22v4.5H5z" fill="#f6c15b"/><path d="M4 23h24v5.5H4z" fill="#3a2a1f"/></svg>回忆蛋糕铺</a>
+    <span class="tiny" id="saved">草稿会自动保存在这台手机上</span>
+  </div>
+</header>
+
+<main class="make wrap">
+  <div class="progress" id="progress"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- 1 · who -->
+  <div class="panel" data-step="0">
+    <h2>这份礼物，送给谁？</h2>
+    <p class="intro">这些字会出现在礼物的开场和蛋糕上。</p>
+    <div class="field">
+      <div class="label">你怎么称呼 TA</div>
+      <div class="chips" data-chips="recipient">
+        <button class="chip">爸爸</button><button class="chip">妈妈</button><button class="chip">爷爷</button><button class="chip">奶奶</button>
+        <button class="chip">外公</button><button class="chip">外婆</button><button class="chip">老公</button><button class="chip">老婆</button>
+        <input class="input" data-custom placeholder="或者自己写" maxlength="12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="birthday">TA 的生日</label>
+        <input class="input" id="birthday" type="date" min="1900-01-01">
+      </div>
+      <div class="field">
+        <label for="age">这次是几岁生日</label>
+        <input class="input" id="age" type="number" inputmode="numeric" min="1" max="120" placeholder="比如 60">
+        <div class="help">蛋糕上会有这么多根蜡烛</div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="label">你是 TA 的（信的落款）</div>
+      <div class="chips" data-chips="from">
+        <button class="chip">儿子</button><button class="chip">女儿</button><button class="chip">孙子</button><button class="chip">孙女</button>
+        <button class="chip">外孙</button><button class="chip">外孙女</button><button class="chip">爱你的我</button><button class="chip">全家人</button>
+        <input class="input" data-custom placeholder="或者自己写" maxlength="16">
+      </div>
+    </div>
+    <div class="field">
+      <div class="label">礼物里的语言</div>
+      <div class="chips" data-chips="lang"><button class="chip" data-v="zh">中文</button><button class="chip" data-v="en">English</button></div>
+    </div>
+  </div>
+
+  <!-- 2 · photos -->
+  <div class="panel" data-step="1">
+    <h2>选一些照片</h2>
+    <p class="intro">建议 20～70 张。照片会按拍摄时间排好，你可以给每张写一句话（可以不写）。</p>
+    <label class="drop" id="drop">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="11" width="36" height="28" rx="4"/><circle cx="17" cy="21" r="3.5"/><path d="M42 33l-10-10-14 14"/><path d="M24 4v10M19 9l5-5 5 5"/></svg>
+      <b>从相册选照片</b>
+      <span class="tiny">可以一次选很多张 · 也支持 3 段以内的短视频（每段 45MB 以内）</span>
+      <input type="file" id="files" accept="image/*,video/*" multiple hidden>
+    </label>
+    <div class="counter">
+      <span class="candles" id="candles">还没有照片</span>
+      <span class="tiny" id="sizeInfo"></span>
+    </div>
+    <div class="bar"><i id="candleBar"></i></div>
+    <p class="tiny" id="photoTip" style="margin-top:10px"></p>
+    <div id="chapters"></div>
+    <p class="tiny" style="margin-top:18px">小提示：点照片下面的「新一章」可以分章节，每章有一个小标题，比如「小时候」「一起过的生日」「现在的我们」。</p>
+  </div>
+
+  <!-- 3 · letter -->
+  <div class="panel" data-step="2">
+    <h2>写几句心里话</h2>
+    <p class="intro">吹完蜡烛、烟花之后，这封信会一行一行出现。可以先选一个开头，再改成你自己的话。</p>
+    <div class="field">
+      <div class="label">从这里开始写（会替换下面的内容）</div>
+      <div class="chips" id="letterTpl"></div>
+    </div>
+    <div class="field">
+      <textarea class="input" id="letter" maxlength="1500" placeholder="写给 TA 的话……"></textarea>
+      <div class="help">一行一句，最好 6～15 行。写具体的小事，比“生日快乐”更打动人。</div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="title">开场大标题</label>
+        <input class="input" id="title" maxlength="24">
+      </div>
+      <div class="field">
+        <label for="heart">比心时出现的话</label>
+        <input class="input" id="heart" maxlength="24">
+      </div>
+    </div>
+    <div class="field">
+      <label for="subtitle">开场小字</label>
+      <input class="input" id="subtitle" maxlength="40">
+    </div>
+  </div>
+
+  <!-- 4 · password -->
+  <div class="panel" data-step="3">
+    <h2>设一个打开礼物的密码</h2>
+    <p class="intro">照片会用这个密码在你手机上加密，没有密码谁也看不到——我们也看不到。建议用 TA 一定记得的数字，比如 TA 的生日。</p>
+    <div class="field">
+      <label for="pw">密码</label>
+      <input class="input" id="pw" maxlength="32" autocomplete="off" inputmode="text">
+      <div class="help">至少 4 位。记下来，发链接的时候一起告诉 TA。</div>
+    </div>
+    <div class="field">
+      <label for="hint">密码提示（打开时会显示）</label>
+      <input class="input" id="hint" maxlength="40">
+    </div>
+  </div>
+
+  <!-- 5 · preview + pay -->
+  <div class="panel" data-step="4">
+    <h2>看看效果，然后生成链接</h2>
+    <p class="intro" id="payIntro">先看看效果（预览版带水印，信只显示开头）。满意了用微信付款，付完马上生成可以发给 TA 的正式礼物。</p>
+    <div class="summary">
+      <div class="card">
+        <h3>礼物信息</h3>
+        <dl class="kv" id="summary"></dl>
+        <button class="btn ghost" id="previewBtn" style="width:100%;margin-top:16px">▶ 先看看效果</button>
+        <p class="tiny" style="margin-top:8px">会在新页面打开，看完点右上角「回去修改」或「生成正式礼物」。</p>
+      </div>
+      <div class="card" id="payCard">
+        <h3>生成正式链接</h3>
+        <div class="pay-price">¥9.99 <small>一份礼物</small></div>
+        <button class="btn candle" id="payBtn" style="width:100%">微信支付 ¥9.99，生成礼物</button>
+        <button class="btn ghost hidden" id="payAliBtn" style="width:100%;margin-top:10px">支付宝支付</button>
+        <p class="err" id="codeErr"></p>
+        <div class="buycode hidden" id="buyCode">
+          <p style="margin:0 0 6px"><b>怎么拿到兑换码</b></p>
+          <p class="tiny" id="buyCodeHow" style="margin:0"></p>
+          <a class="btn primary hidden" id="buyCodeLink" target="_blank" rel="noopener" style="width:100%;margin-top:10px">去买兑换码</a>
+        </div>
+        <details id="haveCode" style="margin-top:6px">
+          <summary class="tiny" style="cursor:pointer">我有兑换码 / 修改已经生成的礼物</summary>
+          <input class="input code-input" id="code" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="24" autocomplete="off" style="margin-top:10px">
+          <button class="btn ghost" id="makeBtn" style="width:100%;margin-top:10px">用兑换码生成</button>
+        </details>
+        <p class="tiny" style="margin-top:12px"><span id="payAuto">付款后自动生成，不用等人工。</span>生成后 7 天内可以免费修改，链接不变。付款即表示你有权分享这些照片，并同意<a href="privacy.html" target="_blank">隐私说明</a>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- done -->
+  <div class="panel done" data-step="5">
+    <div class="spark hand" style="font-size:34px">🎂</div>
+    <p class="big">礼物做好了</p>
+    <p class="muted">把链接和密码发给 TA。建议生日当天再发 :)</p>
+    <div class="card" style="max-width:520px;margin:18px auto;text-align:left">
+      <div class="linkbox"><input class="input" id="giftUrl" readonly><button class="btn small primary" data-copy="giftUrl">复制</button></div>
+      <p style="margin:4px 0 12px">密码：<b id="giftPw" class="hand" style="font-size:20px"></b></p>
+      <div class="qr" id="qr"></div>
+      <p class="tiny" style="text-align:center">用另一台手机扫码也能打开</p>
+      <p style="font-weight:600;margin:16px 0 6px">可以直接复制这段话发给 TA：</p>
+      <div class="share" id="shareText"></div>
+      <button class="btn ghost small" data-copy="shareText" style="margin-top:10px">复制这段话</button>
+    </div>
+    <p class="tiny">链接保存 365 天。请截图保存这一页。你的礼物码：<b id="giftCode"></b>（换手机修改或找回链接时用）</p>
+    <p><a class="btn ghost small" id="openGift" target="_blank" rel="noopener">自己先打开看看</a></p>
+  </div>
+</main>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <button class="btn ghost" id="back">上一步</button>
+    <span class="hint" id="navHint"></span>
+    <button class="btn primary" id="next">下一步</button>
+  </div>
+</nav>
+
+<div class="overlay" id="overlay">
+  <div>
+    <div class="flame"></div>
+    <h3 id="ovTitle">正在给礼物上锁…</h3>
+    <p id="ovText" class="tiny" style="color:#cdb79e">照片正在你的手机上加密，然后上传。请不要关闭这个页面。</p>
+    <div class="bar"><i id="ovBar"></i></div>
+    <p id="ovPct" class="tiny" style="color:#cdb79e"></p>
+  </div>
+</div>
+<div class="overlay paysheet" id="paySheet">
+  <div class="sheet">
+    <p class="hand" style="font-size:24px;margin:0">支付 <b>¥9.99</b></p>
+    <div class="qr" id="payQr"></div>
+    <p id="payTip" class="tiny">请用微信扫一扫付款</p>
+    <a class="btn candle hidden" id="payOpen" style="width:100%" target="_blank" rel="noopener">打开微信支付</a>
+    <p id="payStatus" class="pay-status"><span class="dot"></span>等待付款…付完会自动继续</p>
+    <details id="claimBox" class="hidden" style="text-align:left;margin:0 0 10px">
+      <summary class="tiny" style="cursor:pointer">已经付过款，但这里没反应？</summary>
+      <p class="tiny" style="margin:8px 0">在爱发电「我的订单」里复制订单号，粘贴到这里：</p>
+      <input class="input" id="claimTrade" placeholder="爱发电订单号" autocomplete="off" style="min-height:42px;font-size:15px">
+      <button class="btn small primary" id="claimBtn" style="width:100%;margin-top:8px">确认付款</button>
+      <p class="err" id="claimErr"></p>
+    </details>
+    <button class="btn ghost small" id="payCancel">取消</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="js/qrcode.js"></script>
+<script type="module" src="js/make.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05061a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>🎂</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="vignette"></div>
+
+<div id="lock">
+  <div class="lock-inner">
+    <div class="spark">🎂</div>
+    <p class="lock-title">有一份礼物在等你</p>
+    <input id="lock-input" type="password" inputmode="numeric" autocomplete="off" placeholder="输入密码">
+    <button id="lock-go" class="primary">打开</button>
+    <p id="lock-hint" class="tiny"></p>
+    <p id="lock-error"></p>
+  </div>
+</div>
+
+<div id="splash">
+  <div class="splash-inner">
+    <div class="spark">✦</div>
+    <h1 id="splash-title">生日快乐</h1>
+    <p id="splash-sub"></p>
+    <div id="loading"><div class="track"><div id="load-bar"></div></div><span id="load-text">正在准备…</span></div>
+    <div id="start-buttons">
+      <button id="btn-start-cam" class="primary">✋ 打开摄像头，用手势打开礼物</button>
+      <button id="btn-start-plain">👆 用手指 / 鼠标打开</button>
+      <label class="mic"><input type="checkbox" id="use-mic" checked> 允许麦克风（最后可以真的“吹”蜡烛）</label>
+      <label class="mic" id="reaction-label"><input type="checkbox" id="use-reaction"> 录下我的反应</label>
+      <p id="env-tip" class="tiny"></p>
+    </div>
+  </div>
+</div>
+
+<div id="narration"></div>
+<div id="chapter"><div class="kicker"></div><h2></h2><p></p></div>
+<div id="caption"></div>
+<div id="hint"></div>
+<div id="edge-l" class="edge">‹</div>
+<div id="edge-r" class="edge">›</div>
+<div id="cursor"><span></span></div>
+<div id="gauge"><div class="zones"><span>‹‹ 往回</span><span>停</span><span>往后 ››</span></div><div id="gauge-dot"></div><div id="gauge-label"></div></div>
+
+<!-- always-visible, small gesture / control legend -->
+<div id="legend" class="hidden" title="点一下可以收起 / 展开">
+  <div class="legend-head">怎么玩 <span class="fold">收起</span></div>
+  <ul id="legend-list"></ul>
+</div>
+
+<!-- chapter timeline (tap a chapter to jump) -->
+<div id="timeline" class="hidden"><div id="tl-chapters"></div><div id="tl-marker"></div></div>
+
+<div id="cam"><video id="video" playsinline muted></video><canvas id="camdraw"></canvas></div>
+
+<div id="controls" class="hidden">
+  <button id="btn-prev"><i>◀</i><b>上一张</b></button>
+  <button id="btn-zoom"><i>🔍</i><b>放大</b></button>
+  <button id="btn-next"><i>▶</i><b>下一张</b></button>
+  <button id="btn-cake"><i>🎂</i><b>许愿</b></button>
+  <button id="btn-letter"><i>✉️</i><b>信</b></button>
+  <button id="btn-music"><i>🎵</i><b>音乐开</b></button>
+  <button id="btn-full"><i>⛶</i><b>全屏</b></button>
+  <button id="btn-photo"><i>🖼</i><b>海报</b></button>
+</div>
+
+<!-- optional features (extras.js) -->
+<div id="countdown"><div class="cd-inner"><div class="spark">🕯</div><p class="cd-title"></p><div class="cd-time"></div><p class="cd-sub"></p></div></div>
+<div id="wishes"></div><button id="wishes-skip"></button>
+<button id="btn-gift"></button>
+<div id="surprise"><div class="paper"></div><button id="surprise-close"></button></div>
+<button id="reaction-save"></button>
+<div id="rec-dot">● REC</div>
+
+<div id="letter"><div class="paper"></div><button id="letter-close">继续看看回忆 →</button></div>
+<script>window.SHOP_API = "";</script>
+<script src="shop-loader.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
